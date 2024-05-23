@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Documentation</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".nav-link").click(function (event) {
+                event.preventDefault(); // Evita que el enlace se abra automáticamente
+
+                var sectionId = $(this).attr("href"); // Obtiene el ID de la sección desde el enlace
+                var sectionOffset = $(sectionId).offset(); // Obtiene la posición de la sección
+
+                if (sectionOffset) { // Verifica que la posición de la sección esté definida
+                    $('html, body').animate({
+                        scrollTop: sectionOffset.top
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Table of Contents</header>
+        <ul>
+            <li><a class="nav-link" href="#introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#variables_and_types">Variables and Types</a></li>
+            <li><a class="nav-link" href="#operators">Operators</a></li>
+            <li><a class="nav-link" href="#control_structures">Control Structures</a></li>
+            <li><a class="nav-link" href="#functions">Functions</a></li>
+            <li><a class="nav-link" href="#data_structures">Data Structures</a></li>
+            <li><a class="nav-link" href="#modules_and_packages">Modules and Packages</a></li>
+            <li><a class="nav-link" href="#classes_and_objects">Classes and Objects</a></li>
+            <li><a class="nav-link" href="#exceptions">Exceptions</a></li>
+            <li><a class="nav-link" href="#file_input_and_output">File Input and Output</a></li>
+            <li><a class="nav-link" href="#additional_resources">Additional Resources</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+
+        <section class="main-section" id="introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    Python comes with a standard library that provides support for many common programming tasks, such
+                    as file I/O, networking, and data manipulation. Additionally, Python allows for the creation of
+                    modules and packages, which can be used to organize and share code.
+                </p>
+                <ul>
+                    <li>
+                        Python's extensive standard library includes modules for working with data structures (such as
+                        lists, dictionaries, and sets), handling dates and times, and performing mathematical
+                        operations.
+                    </li>
+                    <li>
+                        Python can be extended using third-party libraries for specialized tasks. For example, libraries
+                        like NumPy and pandas are commonly used for data manipulation and analysis, while TensorFlow and
+                        PyTorch are popular for machine learning and artificial intelligence.
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="main-section" id="variables_and_types">
+            <header>Variables and Types</header>
+            <article>
+                <code>
+                    # Definir una variable con el mensaje
+                    mensaje = "Hola mundo"
+
+                    # Imprimir el mensaje
+                    print(mensaje)
+                </code>
+                <code>
+                    # Definir variables con diferentes tipos de datos
+                    numero = 10
+                    flotante = 3.14
+                    booleano = True
+                    cadena = "Python"
+                    lista = [1, 2, 3]
+                    tupla = (4, 5, 6)
+                    diccionario = {"nombre": "Juan", "edad": 30}
+                
+                    # Imprimir los tipos de datos de las variables
+                    print(type(numero))
+                    print(type(flotante))
+                    print(type(booleano))
+                    print(type(cadena))
+                    print(type(lista))
+                    print(type(tupla))
+                    print(type(diccionario))
+                  </code>
+
+                Puedes ejecutar este código y ver los resultados en la consola de tu entorno de desarrollo. Esto te dará
+                una introducción a cómo se definen y utilizan variables en Python, así como los diferentes tipos de
+                datos que puedes manejar.
+            </article>
+        </section>
+
+        <section class="main-section" id="operators">
+            <header>Operators</header>
+            <p>
+                In Python, operators are used to perform operations on variables and values.
+                Python supports a wide range of operators, including arithmetic operators,
+                comparison operators, logical operators, and more.
+            </p>
+            <p>
+                Python operators work with various data types, such as numbers, strings, lists, and dictionaries.
+            </p>
+            <p>
+                Here are some examples of operators in Python:
+            <ul>
+                <li>Arithmetic operators: + (addition), - (subtraction), * (multiplication), / (division)</li>
+                <li>Comparison operators: == (equal to), != (not equal to), < (less than),> (greater than)</li>
+                <li>Logical operators: and (logical AND), or (logical OR), not (logical NOT)</li>
+                <li>Assignment operators: = (assignment), += (add and assign), -= (subtract and assign)</li>
+                <li>Bitwise operators: & (bitwise AND), | (bitwise OR), ^ (bitwise XOR)</li>
+            </ul>
+            </p>
+        </section>
+
+        <section class="main-section" id="control_structures">
+            <header>Control Structures</header>
+            <article>
+                Python ofrece varias estructuras de control para manejar el flujo de un programa. Algunas de las
+                estructuras de control más comunes son:
+                <ul>
+                    <li><strong>if else:</strong> Permite ejecutar bloques de código dependiendo de si una condición es
+                        verdadera o falsa.</li>
+                    <li><strong>while:</strong> Permite ejecutar un bloque de código mientras una condición especificada
+                        sea verdadera.</li>
+                    <li><strong>for:</strong> Permite iterar sobre una secuencia (como una lista o una tupla) y ejecutar
+                        un bloque de código para cada elemento.</li>
+                </ul>
+                Ejemplo de uso de estructuras de control en Python:
+                <code>
+                    #Ejemplo de if ... else
+                    x = 10
+                    if x > 5:
+                        print("x es mayor que 5")
+                    else:
+                        print("x no es mayor que 5")
+                </code>
+                <code>
+                    #Ejemplo de while
+                    y = 0
+                    while y < 5:
+                        print(y)
+                        y += 1
+                </code>
+                <code>
+                    #Ejemplo de for
+                    for i in range(5);
+                        print(i)
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="functions">
+            <header>Functions</header>
+            <article>
+                <p>
+                    En Python, una función es un bloque de código que solo se ejecuta cuando se llama. Puede aceptar
+                    parámetros y devolver valores. Las funciones en Python se definen usando la palabra clave
+                    <code>def</code>.
+                </p>
+                <p>
+                    Ejemplo de una función simple en Python:
+                </p>
+                <p>
+                    <code>
+                        def greet(name):
+                    </code>
+                </p>
+                <p>
+                    <code>
+                            return "Hello, " + name
+                    </code>
+                </p>
+                <p>Llamando a la función</p>
+                <code>
+                        print(greet("John"))
+                    </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="data_structures">
+            <header>Data Structures</header>
+            <article>
+                <p>
+                    Python proporciona varias estructuras de datos incorporadas para almacenar y organizar datos de
+                    manera eficiente. Algunas de las estructuras de datos más comunes en Python son:
+                <ul>
+                    <li><strong>Listas:</strong>Una colección ordenda y mutable de elementos.</li>
+                    <li><strong>Tuplas:</strong>Una colección ordenada e inmutable de elementos.</li>
+                    <li><strong>Conjuntos:</strong>Una colección no ordenada de elementos únicos.</li>
+                    <li><strong>Diccionarios:</strong>Una colección de pares clave-valor, donde cada llave es única.
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    Ejemplo de uso de algunas estructuras de datos en Python:
+                    <code>
+                        #Lista 
+                        lista = [1,2,3,4,5] 
+                    </code>
+                    <code>
+                        #Tupla 
+                        tupla = (1,2,3,4,5) 
+                    </code>
+                    <code>
+                        #Conjunto 
+                        conjunto = {1,2,3,4,5} 
+                    </code>
+                    <code>
+                        #Diccionario 
+                        diccionario = {"nombre": "Juan","edad":30}
+                    </code>
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="modules_and_packages">
+            <header>Modules and Packages</header>
+            <article>
+                <p>
+                    En Python, un módulo es un archivo que contiene definiciones y declaraciones de Python. El nombre
+                    del archivo es el nombre del módulo con la extensión `.py`. Un paquete, por otro lado, es una
+                    colección de módulos. Puede haber paquetes dentro de paquetes.
+                </p>
+                <p>
+                    Para usar un módulo en Python, primero debe importarlo. Puede importar un módulo completo o solo
+                    partes específicas de él.
+                </p>
+                <p>
+                    Ejemplo de importación de un módulo y uso de una función de ese módulo:
+                    <code>
+                        #Importar el módulo math
+                        import math
+                    </code>
+                    <code>
+                        #Usar la función sqrt del móduo math 
+                        print(math.sqrt(16))
+                    </code>
+                </p>
+                <p>
+                    También puede crear sus propios módulos y paquetes en Python para organizar su código de manera más
+                    efectiva y reutilizable.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="classes_and_objects">
+            <header>Classes and Objects</header>
+            <article>
+                <p>En Python, una clase es un plano para crear objetos. Un objeto es una instancia de una clase. Las
+                    clases en Python se definen utilizando la palabra clave <code>class</code></p>
+                <p>
+                    Ejemplo de una clase simple en Python:
+                    <code>
+                        class Persona:
+                            def __init__(self, nombre, edad):
+                                self.nombre = nombre
+                                self.edad = edad
+                            
+                            def saludar(self):
+                                return "Hola, soy " + self.nombre
+                    </code>
+                    <code>
+                        #Crear un objeto de la clase Persona
+                        persona1 = Persona("Juan", 30)
+                    </code>
+                    <code>
+                        #Llamar al método saludar del objeto personal
+                        print(persona1.saludar())
+                    </code>
+                </p>
+                <p>
+                    En este ejemplo, la clase <code>Persona</code> tiene dos atributos (nombre y edad) y un método
+                    (saludar) que devuelve un saludo con el nombre de la persona. Puedes crear tantas instancias de
+                    clase <code>Persona</code> como desees.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="exceptions">
+            <header>Exceptions</header>
+            <article>
+                <p>
+                    En Python, una excepción es un evento que interrumpe el flujo normal de ejecución de un programa.
+                    Las excepciones se utilizan para manejar errores y otros eventos excepcionales que pueden ocurrir
+                    durante la ejecución de un programa.
+                </p>
+                <p>
+                    Ejemplo de uso de excepciones en Python:
+                    <code>
+                        try:
+                            resultado = 10/0
+                        except ZeroDivisionError:
+
+                            print("Error: División por cero")
+                        else:
+                            print("La división fue exitosa")
+                        finally:
+                            print("Finalizando..")
+                    </code>
+                </p>
+                <p>
+                    En este ejemplo, el bloque de código dentro del <code>try</code> intenta dividir 10 por 0, lo cual
+                    generará una excepción <code>ZeroDivisionError</code>. El bloque <code>except</code> maneja esta
+                    excepción, imprimiendo un mensaje de error. El bloque <code>else</code> se ejecuta si no se produce
+                    ninguna excepción, y el bloque <code>finally</code> se ejecuta siempre, independientemente de si se
+                    produjo una excepción o no.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="file_input_and_output">
+            <header>File Input and Output</header>
+            <article>
+                <p>
+                    En Python, puede trabajar con archivos para leer y escribir datos. Puede abrir un archivo utilizando
+                    la función <code>open()</code> y luego usar métodos como <code>read()</code>, <code>write()</code> y
+                    <code>close()</code> para interactuar con él.
+                </p>
+                <p>
+                    Ejemplo de lectura y escritura básica de un archivo en Python:
+                    <code>
+                        #Abrir un archivo en modo escritura
+                        file = open("archivo.txt","w")
+                
+                        # Escribir en el archivo
+                        file.write("Hola, mundo!")
+                    
+                        # Cerrar el archivo
+                        file.close()
+                    
+                        # Abrir el archivo en modo lectura
+                        file = open("archivo.txt", "r")
+                    
+                        # Leer el contenido del archivo
+                        contenido = file.read()
+                        print(contenido)
+                    
+                        # Cerrar el archivo
+                        file.close()
+                    </code>
+                </p>
+                <p>
+                    También puede usar la declaración <code>with</code> para abrir un archivo. Esta declaración asegura
+                    que el archivo se cierre correctamente una vez que haya terminado de usarlo, incluso si ocurre una
+                    excepción durante la operación.
+                </p>
+                <p>
+                    Ejemplo de uso de la declaración <code>with</code> para leer un archivo en Python:
+                    <code>
+                        with open("archivo.txt", "r") as file:
+                            contenido = file.read()
+                            print(contenido)
+                    </code>
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="additional_resources">
+            <header>Additional Resources</header>
+            <article>
+                <ul>
+                    <li>
+                        All the documentation in this page is taken from
+                        <a href="https://pyspanishdoc.sourceforge.net/" target="_blank">Documentation of Python</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
